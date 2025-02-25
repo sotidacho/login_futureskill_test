@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.3 on linux)" generated="2025-02-25T23:10:14.265861" rpa="false" schemaversion="5">
+<suite id="s1" name="Login Test" source="/opt/lampp/htdocs/futureskill_test/login_test.robot">
+<test id="s1-t1" name="ทดสอบเข้าสู่ระบบ FutureSkill" line="11">
+<kw name="เปิดเบราว์เซอร์และไปยังหน้าล็อกอิน">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-25T23:10:14.905979" level="INFO">Opening browser 'Chrome' to base url 'https://app.futureskill.co/my-library'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-25T23:10:14.904802" elapsed="3.875025"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-02-25T23:10:18.781269" elapsed="0.138773"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name:email</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-25T23:10:18.920948" elapsed="4.715225"/>
+</kw>
+<status status="PASS" start="2025-02-25T23:10:14.900488" elapsed="8.736292"/>
+</kw>
+<kw name="กรอกชื่อผู้ใช้และรหัสผ่าน">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-25T23:10:23.639762" level="INFO">Typing text 'padcenter@prachakij.com' into text field 'name:email'.</msg>
+<arg>name:email</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-25T23:10:23.639000" elapsed="0.457082"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-25T23:10:24.097508" level="INFO">Typing text 'Padcenter11' into text field 'name:password'.</msg>
+<arg>name:password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-25T23:10:24.096678" elapsed="0.331373"/>
+</kw>
+<status status="PASS" start="2025-02-25T23:10:23.637903" elapsed="0.790619"/>
+</kw>
+<kw name="คลิกปุ่มเข้าสู่ระบบ">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-02-25T23:10:24.431834" level="INFO">Clicking button 'css:button[type='submit']'.</msg>
+<arg>css:button[type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-25T23:10:24.431086" elapsed="0.461914"/>
+</kw>
+<status status="PASS" start="2025-02-25T23:10:24.429818" elapsed="0.464082"/>
+</kw>
+<kw name="ตรวจสอบว่าล็อกอินสำเร็จ">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<msg time="2025-02-25T23:10:35.547533" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-02-25T23:10:35.548047" level="FAIL">Text 'My Library' did not appear in 10 seconds.</msg>
+<arg>My Library</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="FAIL" start="2025-02-25T23:10:24.898965" elapsed="10.652222">Text 'My Library' did not appear in 10 seconds.</status>
+</kw>
+<status status="FAIL" start="2025-02-25T23:10:24.896573" elapsed="10.655202">Text 'My Library' did not appear in 10 seconds.</status>
+</kw>
+<kw name="บันทึกภาพหน้าจอ">
+<status status="NOT RUN" start="2025-02-25T23:10:35.552525" elapsed="0.000180"/>
+</kw>
+<kw name="ปิดเบราว์เซอร์">
+<status status="NOT RUN" start="2025-02-25T23:10:35.553343" elapsed="0.000148"/>
+</kw>
+<status status="FAIL" start="2025-02-25T23:10:14.892597" elapsed="20.661521">Text 'My Library' did not appear in 10 seconds.</status>
+</test>
+<status status="FAIL" start="2025-02-25T23:10:14.268813" elapsed="21.286759"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login Test" id="s1" pass="0" fail="1" skip="0">Login Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
